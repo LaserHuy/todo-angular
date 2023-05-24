@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url("./assets/td-bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+h1{
+    color: white;
+    font-weight: 700!important;
+    font-size: 40px!important;
+    text-shadow: 5px 5px 10px black!important;
+}
+
+.drop-shadow {
+    backdrop-filter: blur(1rem)!important;
+    box-shadow: 2rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5)!important;
+}
+
+input {
+    background-color: rgba(225, 225, 225, 0.1)!important;
+    color: white!important;
+}
+
+input:focus {
+    background-color: rgba(225, 225, 225, 0.2)!important;
+    color: white!important;
+}
+
+input[type = text] {
+    height: 60px;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+.btn-todo {
+    height: 60px!important;
+    padding: 12px 20px!important;
+    margin: 8px 0!important;
+    background-color: rgba(225, 225, 225, 0.1)!important;
+    color: #475afe!important;
+    position: relative!important;
+    display: inline-block!important;
+    font-size: 16px!important;
+    text-decoration: none!important;
+    text-transform: uppercase!important;
+    overflow: hidden!important;
+    transition: .5s!important;
+    letter-spacing: 4px!important;
+}
+
+.btn-todo:hover{
+    background: #475afe!important;
+    color: #e9eeff!important;
+    box-shadow: 0 0 5px #475afe, 0 0 25px #475afe, 0 0 50px #475afe, 0 0 100px #475afe!important;
+}
+
+.btn-todo span {
+    position: absolute!important;
+    display: block!important;
+}
+
+.border-danger {
+    border: 1px solid #f04141!important;
+}

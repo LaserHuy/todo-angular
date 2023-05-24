@@ -1,0 +1,77 @@
+<div class="row justify-content-center md-3">
+    <div class="col-md-4 text-center">
+        <h1>TODO CATEGORIES</h1>
+        <p class="brand">
+            Todo App full stack.
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="row form-inline">
+            <div class="col-md-10 form-group">
+                <input 
+                    type="text" 
+                    class="form-control drop-shadow" 
+                    placeholder="Add New Category"
+                    name="categoryName"
+                    [(ngModel)]="ctgName"
+                    required="required"
+                    #categoryName="ngModel"
+                    [ngClass]="{'border-danger': f.submitted && categoryName.invalid}"
+                    [@shake]="animationState"
+                >
+            </div>
+            <button 
+                type="submit" 
+                class="btn col-md-2 btn-todo drop-shadow"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                {{ btnText }}
+            </button>
+
+            <div class="text-danger ml-3">
+                <small *ngIf="f.submitted && categoryName.invalid ">
+                    Category name is required...
+                </small>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="row categories-list">
+    <div class="col-md-3" *ngFor="let category of categories">
+        <div class="card drop-shadow" [style.border-left-color] = "category.data.colorCode">
+            <div class="card-body">
+                <div class="clearfix">
+                    <div class="float-start">
+                        <div class="badge badge-primary">
+                            CATEGORY
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="todo-content">
+                    <h3 [style.color] = "category.data.colorCode">{{ category.data.category }}</h3>
+                    <small class="text-white">Hello how are you</small>
+                </div>
+                <span class="badge badge-danger">{{ category.data.todoCount }} - Todos</span>
+
+            </div>
+        </div>
+        <div class="float-end cat-tools">
+            <small class="edit">
+                <i 
+                    class="fa fa-pencil-alt text-success" 
+                    (click)="onEdit(category.data.category, category.id)"
+                ></i>
+            </small>
+            <small class="edit"><i class="fas fa-trash text-danger"></i></small>
+        </div>
+    </div>
+</div>

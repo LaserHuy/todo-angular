@@ -1,0 +1,179 @@
+.brand {
+    font-size: 25px;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+}
+
+.card {
+    margin-top: 50px;
+    border: none;
+    border-left: 5px solid #475afe;
+    border-top-left-radius: 30px;
+    background-color: rgba(225, 225, 225, 0.1);
+    color: #e9eeff;    
+}
+
+.badge-primary {
+    background: rgba(225, 225, 225, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 225, 225, 0.5);
+    box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.05);
+    color: #39095d;
+}
+
+.badge-danger {
+  background: rgba(225, 225, 225, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(225, 225, 225, 0.5);
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.05);
+  color: #f04141;
+  margin-top: 50px;
+}
+
+.categories-list .card{
+  position: relative;
+  overflow: hidden;
+  transition: top 0.5s, transform 0.5s;
+  transition-delay: 0.5s 0s 0s;
+  z-index: 2;
+}
+
+.categories-list .card:hover {
+  cursor: pointer;
+}
+
+.categories-list .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120px;
+  width: 150px;
+  height: 100%;
+  background: rgba(225, 225, 225, 0.5);
+  transform: skewX(45deg) translateX(550px);
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.categories-list .card:hover:before {
+    transform: skewX(45deg) translateX(-150px);
+}
+
+.cat-tools {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.cat-tools .edit {
+  position: relative;
+  margin: 10px;
+}
+
+.cat-tools .edit i {
+  position: relative;
+  top: -35px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  border: 1px solid rgba(225, 225, 225, 0.4);
+  border-right: 1px solid rgba(225, 225, 225, 0.2);
+  border-bottom: 1px solid rgba(225, 225, 225, 0.2);
+  border-radius: 10px;
+  background: rgba(225, 225, 225, 0.1);
+  backdrop-filter: blur(4px);
+  box-shadow: 3px 0px 2px rgb(255, 255, 255, 0.2);
+  transition: top 0.5s, z-index 0.5s, transform 0.5s;
+  transition-delay: 0.5s, 0s, 0s;
+  z-index: 1;
+}
+
+.cat-tools .edit i:before {
+  position: absolute;
+}
+
+.cat-tools .edit i:hover {
+  transition-delay: 0s, 0.5s, 0.5s;
+  top: -1px;
+  transform: translateY(-40px);
+  z-index: 3;
+}
+
+.btn-todo span:nth-child(1) {
+  top: 0 ;
+  left: -100% ;
+  width: 100% ;
+  height: 2px ;
+  background: linear-gradient(90deg, transparent, #475afe) ;
+  animation: btn-anim1 1s linear infinite ;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100% ;
+  }
+  50%,100% {
+    left: 100% ;
+  }
+}
+
+.btn-todo span:nth-child(2) {
+  top: -100% ;
+  right: 0 ;
+  width: 2px ;
+  height: 100% ;
+  background: linear-gradient(180deg, transparent, #475afe) ;
+  animation: btn-anim2 1s linear infinite ;
+  animation-delay: .25s ;
+}
+
+@keyframes btn-anim2 {
+    0% {
+      top: -100% ;
+    }
+    50%,100% {
+      top: 100% ;
+    }
+}
+
+.btn-todo span:nth-child(3) {
+    bottom: 0 ;
+    right: -100% ;
+    width: 100% ;
+    height: 2px ;
+    background: linear-gradient(270deg, transparent, #475afe) ;
+    animation: btn-anim3 1s linear infinite ;
+    animation-delay: .5s ;
+}
+
+@keyframes btn-anim3 {
+    0% {
+      right: -100% ;
+    }
+    50%,100% {
+      right: 100% ;
+    }
+}
+
+.btn-todo span:nth-child(4) {
+    bottom: -100% ;
+    left: 0 ;
+    width: 2px ;
+    height: 100% ;
+    background: linear-gradient(360deg, transparent, #475afe) ;
+    animation: btn-anim4 1s linear infinite ;
+    animation-delay: .75s ;
+}
+
+@keyframes btn-anim4 {
+    0% {
+      bottom: -100% ;
+    }
+    50%,100% {
+      bottom: 100% ;
+    }
+}

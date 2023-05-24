@@ -1,0 +1,14 @@
+header {
+    height: 100px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.brand {
+    background: linear-gradient(to right bottom, rgba(225, 225, 225, 0.3), rgba(225, 225, 225, 0.1));
+    padding: 10px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
