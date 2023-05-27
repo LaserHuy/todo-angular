@@ -40,7 +40,7 @@ export class CategoryService {
 
   deleteCategory(id: string) {
     this.afs.doc('categories/'+ id).delete().then(() => {
-      this.toastr.success('Category deleted successfully');
+      this.toastr.error('Category deleted successfully');
     });
   }
 

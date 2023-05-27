@@ -1,6 +1,6 @@
 <div class="row justify-content-center md-3">
     <div class="col-md-4 text-center">
-        <h1>TODO CATEGORIES</h1>
+        <h1>ALL CATEGORIES</h1>
         <p class="brand">
             Todo App full stack.
     </div>
@@ -56,7 +56,7 @@
                     
                 </div>
 
-                <div class="todo-content">
+                <div class="todo-content" [routerLink]="['/todo', category.id]">
                     <h3 [style.color] = "category.data.colorCode">{{ category.data.category }}</h3>
                     <small class="text-white">Hello how are you</small>
                 </div>
@@ -71,7 +71,11 @@
                     (click)="onEdit(category.data.category, category.id)"
                 ></i>
             </small>
-            <small class="edit"><i class="fas fa-trash text-danger"></i></small>
+            <small class="edit">
+                <i 
+                    class="fas fa-trash text-danger"
+                    (click)="onDelete(category.id)"
+                ></i></small>
         </div>
     </div>
 </div>

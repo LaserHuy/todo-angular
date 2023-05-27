@@ -36,7 +36,7 @@ export class CategoryComponent implements OnInit {
   }
 
   onSubmit(f:NgForm) {
-    if (f.value.categoryName === '') {
+    if (f.value.categoryName === '' || f.value.categoryName === null) {
       this.animationState = this.animationState === 'start' ? 'shake' : 'start';
     } else if (this.btnText === 'Add') {
 
@@ -47,14 +47,15 @@ export class CategoryComponent implements OnInit {
         todoCount: 0
       };    
       this.categoryService.saveCategory(todoCategory);
-      f.resetForm();
+      f.reset();
+      console.log(f.value.categoryName);
 
     } else if (this.btnText === 'Edit') {
 
       this.categoryService.updateCategory(this.ctgId, f.value.categoryName);
-      f.resetForm();
+      f.reset();
       this.btnText = 'Add';
-      
+
     }
   }
 
@@ -62,6 +63,10 @@ export class CategoryComponent implements OnInit {
     this.ctgName = category;
     this.btnText = 'Edit';
     this.ctgId = id;
+  }
+
+  onDelete(id: string) {
+    this.categoryService.deleteCategory(id);
   }
 
 }
